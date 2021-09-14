@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Hi Taxi</string>
+    <string name="intro_message">Login and start to book your drive</string>
+    <string name="login_with_phone_text">Login with Phone Number</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="location_place_error_message">Please go to more spacious area and try again.</string>
+    <string name="try_again">Try Again</string>
+
+    <string name="phone_number">%1$s %2$s</string>
+    <string name="info_verification_code">\"Please enter the verification code sent \"</string>
+    <string name="error_try_again">Login error, please try again, error: %1$s</string>
+    <string name="warning_valid_phone_number">Please enter a valid phone number</string>
+    <string name="error_verification_code">Send verify code failed.</string>
+    <string name="call_taxi">Call Taxi</string>
+    <string name="where_would_like_to_go">Where would you like to go?</string>
+    <string name="classic_car">Classic</string>
+    <string name="cabin_car">Cabin</string>
+    <string name="premium_car">Premium</string>
+    <string name="see_all">See all</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="set_destination">Set Destination</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
+    <string name="how_was_trip">How was your trip?</string>
+    <string name="will_not_see_rating">"%1$s won't see your rating"</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="rate_driver">Rate the driver</string>
+    <string name="rate_vehicle">Rate the vehicle</string>
+    <string name="average_rate">Average Rate: %1$s</string>
+    <string name="write_comment">Write a comment</string>
+    <string name="taxi_arrived_title">HiTaxi Arrived.</string>
+    <string name="taxi_arrived_message">The taxi you called has arrived.</string>
+    <string name="start_trip">Start Trip</string>
+    <string name="driver_name">&lt;b>Full Name: &lt;/b>%1$s</string>
+    <string name="driver_age">&lt;b>Age: &lt;/b>%1$s</string>
+    <string name="driver_gender">&lt;b>Gender: &lt;/b>%1$s</string>
+    <string name="driver_car">&lt;b>Car: &lt;/b>%1$s</string>
+    <string name="driver_car_type">&lt;b>Car Type: &lt;/b>%1$s</string>
+    <string name="driver_car_plate">&lt;b>Car Plate: &lt;/b>%1$s</string>
+    <string name="pick_up">Pick Up</string>
+    <string name="drop_off">Drop Off</string>
+    <string name="home">Home</string>
+    <string name="destination">Destination</string>
+
+    <string name="taxi_eta">%1$s</string>
+    <string name="taxi_distance">%1$s</string>
+    <string name="taxi_price">$ %1$s</string>
+    <string name="your_location">Your location</string>
+    <string name="unknown_location">Unknown Location</string>
+    <string name="exit_question">Do you want to exit?</string>
+    <string name="answer_yes">Yes</string>
+    <string name="answer_no">No</string>
+    <string name="answer_cancel">Cancel</string>
+    <string name="warning_empty_destination">Please choose your destination location</string>
+    <string name="warning_empty_starting_location">Please choose your starting location</string>
+    <string name="info_no_taxi_available">No taxi available nearby</string>
+    <string name="info_nearby_taxi">%1$d taxi available nearby</string>
+
+
+    <string name="login_mobile_number_title">Sms Verification</string>
+    <string name="login_mobile_number_description">Enter your phone number and we will send you a verification code</string>
+    <string name="enter_sms_code">Enter SMS Code sent to</string>
+
+    <string name="show_route_petal_maps">Show route on Petal Maps</string>
+    <string name="info_no_notification_founded">No notifications founded.</string>
+
+
+</resources>

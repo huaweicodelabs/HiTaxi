@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/driverImage"
+        android:layout_width="@dimen/person_image_size"
+        android:layout_height="@dimen/person_image_size"
+        android:background="@drawable/driver_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/driverName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/muli_regular"
+        android:text="@string/driver_age"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/driverImage"
+        app:layout_constraintTop_toTopOf="@id/driverImage" />
+
+    <LinearLayout
+        android:id="@+id/ageGenderRoot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="@id/driverName"
+        app:layout_constraintStart_toStartOf="@id/driverName"
+        app:layout_constraintTop_toBottomOf="@id/driverName">
+
+        <TextView
+            android:id="@+id/driverGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/driverImage"
+            app:layout_constraintTop_toTopOf="@id/driverImage" />
+
+        <TextView
+            android:id="@+id/driverAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/driverImage"
+            app:layout_constraintTop_toTopOf="@id/driverImage" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/driverVehicle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/muli_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="@id/ageGenderRoot"
+        app:layout_constraintStart_toStartOf="@id/ageGenderRoot"
+        app:layout_constraintTop_toBottomOf="@id/ageGenderRoot" />
+
+    <TextView
+        android:id="@+id/driverCarType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/muli_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="@id/driverVehicle"
+        app:layout_constraintStart_toStartOf="@id/driverVehicle"
+        app:layout_constraintTop_toBottomOf="@id/driverVehicle" />
+
+    <TextView
+        android:id="@+id/driverVehiclePlate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/muli_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="@id/driverCarType"
+        app:layout_constraintStart_toStartOf="@id/driverCarType"
+        app:layout_constraintTop_toBottomOf="@id/driverCarType" />
+
+    <include
+        android:id="@+id/startLocation"
+        layout="@layout/item_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/driverImage" />
+
+    <include
+        android:id="@+id/endLocation"
+        layout="@layout/item_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/startLocation" />
+
+    <View
+        android:id="@+id/stepSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator_height"
+        android:layout_marginTop="4dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/endLocation" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stepRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/stepSeparator">
+
+        <ImageView
+            android:id="@+id/stepActionIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stepInstruction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/stepActionIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stepDistanceTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/stepActionIcon"
+            app:layout_constraintTop_toBottomOf="@id/stepInstruction" />
+
+        <TextView
+            android:id="@+id/stepRoadName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/stepActionIcon"
+            app:layout_constraintTop_toBottomOf="@id/stepDistanceTime" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

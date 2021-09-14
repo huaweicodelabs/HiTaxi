@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.huawei.hitaxicodelab_java.ui.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.huawei.hitaxicodelab_java.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_permissionFragment"
+            app:destination="@id/permissionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_destinationFragment"
+            app:destination="@id/destinationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.huawei.hitaxicodelab_java.ui.permission.PermissionFragment"
+        android:label="PermissionFragment" />
+
+    <fragment
+        android:id="@+id/destinationFragment"
+        android:name="com.huawei.hitaxicodelab_java.ui.destination.DestinationFragment"
+        android:label="fragment_destination">
+        <action
+            android:id="@+id/action_destinationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="isFromDestination"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

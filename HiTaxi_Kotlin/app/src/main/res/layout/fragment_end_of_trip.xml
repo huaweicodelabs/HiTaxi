@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/skipRateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/muli_regular"
+            android:text="@string/skip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/driverImage"
+            android:layout_width="@dimen/person_image_size"
+            android:layout_height="@dimen/person_image_size"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/driver_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skipRateButton" />
+        <TextView
+            android:id="@+id/howWasTripText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/muli_regular"
+            android:text="@string/how_was_trip"
+            android:textColor="@color/black"
+            android:textSize="@dimen/big_title_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/driverImage"
+            app:layout_constraintStart_toEndOf="@id/driverImage"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/wontSeeRatingText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintTop_toBottomOf="@id/howWasTripText"
+            app:layout_constraintStart_toStartOf="@id/howWasTripText"
+            app:layout_constraintEnd_toEndOf="@id/howWasTripText"/>
+        <TextView
+            android:id="@+id/totalCostText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/total_cost"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintTop_toBottomOf="@id/driverImage"
+            app:layout_constraintStart_toStartOf="@id/driverImage" />
+        <TextView
+            android:id="@+id/tripCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/muli_regular"
+            android:textSize="@dimen/big_title_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/totalCostText"
+            app:layout_constraintBottom_toBottomOf="@id/totalCostText"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <View
+            android:id="@+id/infoSeparator"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/silver"
+            app:layout_constraintTop_toBottomOf="@id/tripCost"
+            app:layout_constraintStart_toStartOf="@id/totalCostText"
+            app:layout_constraintEnd_toEndOf="@id/tripCost"/>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/ratingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/infoSeparator"
+            app:layout_constraintBottom_toTopOf="@id/finishRateButton">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/item_rating"
+                    android:id="@+id/rateDriver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="@{@string/rate_driver}" />
+                <include layout="@layout/item_rating"
+                    android:id="@+id/rateVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="@{@string/rate_vehicle}" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <Button
+            android:id="@+id/finishRateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:backgroundTint="@color/huawei_red"
+            android:fontFamily="@font/muli_regular"
+            android:textStyle="bold"
+            android:text="@string/finish"
+            android:textAllCaps="false"
+            android:textSize="@dimen/title_size"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

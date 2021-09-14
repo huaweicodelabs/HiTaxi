@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:paddingBottom="8dp">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search_and_address_layout" />
+
+
+    <FrameLayout
+        android:id="@+id/search_and_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/suggestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/suggestions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/start_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_start_location_pin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/address_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/home"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_regular"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_imageView"
+                app:layout_constraintEnd_toStartOf="@+id/taxi_info"
+                app:layout_constraintStart_toEndOf="@+id/start_imageView"
+                app:layout_constraintTop_toTopOf="@+id/start_imageView" />
+
+            <View
+                android:id="@+id/separator_first"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/start_imageView" />
+
+            <ImageView
+                android:id="@+id/destination_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_end_location_pin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator_first" />
+
+            <TextView
+                android:id="@+id/address_destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/destination"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_regular"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/destination_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/destination_imageView"
+                app:layout_constraintTop_toTopOf="@+id/destination_imageView" />
+
+            <TextView
+                android:id="@+id/taxi_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/info_no_taxi_available"
+                android:textSize="8sp"
+                android:fontFamily="@font/muli_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/start_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/start_imageView" />
+
+            <TextView
+                android:id="@+id/taxi_arrived_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:fontFamily="@font/muli_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/time_imageView"
+                app:layout_constraintStart_toEndOf="@+id/time_imageView"
+                app:layout_constraintTop_toTopOf="@+id/time_imageView" />
+
+            <ImageView
+                android:id="@+id/time_imageView"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_time"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator_second" />
+
+            <ImageView
+                android:id="@+id/distance_imageView"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_distance"
+                app:layout_constraintEnd_toStartOf="@+id/taxi_distance"
+                app:layout_constraintTop_toBottomOf="@+id/separator_second" />
+
+            <TextView
+                android:id="@+id/taxi_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:fontFamily="@font/muli_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/distance_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/distance_imageView" />
+
+            <ImageView
+                android:id="@+id/price_imageView"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_money"
+                app:layout_constraintEnd_toStartOf="@+id/distance_imageView"
+                app:layout_constraintStart_toEndOf="@+id/time_imageView"
+                app:layout_constraintTop_toBottomOf="@+id/separator_second" />
+
+            <TextView
+                android:id="@+id/taxi_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:fontFamily="@font/muli_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/price_imageView"
+                app:layout_constraintStart_toEndOf="@+id/price_imageView"
+                app:layout_constraintTop_toTopOf="@+id/price_imageView" />
+
+            <View
+                android:id="@+id/separator_second"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/destination_imageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/suggestions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_search_24" />
+
+            <TextView
+                android:id="@+id/searchAddressText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:text="@string/where_would_like_to_go"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:fontFamily="@font/muli_regular"
+                app:layout_constraintTop_toTopOf="@id/searchIcon" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/sendTaxiSeparator" />
+
+
+    <View
+        android:id="@+id/sendTaxiSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toTopOf="@id/callTaxi"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/callTaxi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/muli_regular"
+        android:textStyle="bold"
+        android:backgroundTint="@color/huawei_red"
+        android:text="@string/call_taxi"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

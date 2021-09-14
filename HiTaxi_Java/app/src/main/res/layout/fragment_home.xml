@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.huawei.hms.maps.MapView
+        android:id="@+id/huaweiMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:cameraTargetLat="41.009314"
+        map:cameraTargetLng="29.003253"
+        map:cameraZoom="10"
+        map:mapType="normal"
+        map:uiCompass="true"
+        map:uiZoomControls="true" />
+
+    <ImageView
+        android:id="@+id/petalMapsButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/image_button_bg"
+        android:contentDescription="@null"
+        android:src="@drawable/petal_maps_logo"
+        app:layout_constraintBottom_toTopOf="@id/bottomSheet"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/petalMapsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/nunitosans"
+        android:paddingHorizontal="4dp"
+        android:background="@drawable/image_button_bg"
+        android:text="@string/show_route_petal_maps"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintTop_toTopOf="@id/petalMapsButton"
+        app:layout_constraintBottom_toBottomOf="@id/petalMapsButton"
+        app:layout_constraintStart_toEndOf="@id/petalMapsButton" />
+
+    <ImageView
+        android:id="@+id/myLocationButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/image_button_bg"
+        android:contentDescription="@null"
+        android:padding="@dimen/image_button_padding"
+        android:src="@drawable/ic_baseline_my_location_24"
+        app:layout_constraintBottom_toTopOf="@id/bottomSheet"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/first_location_ImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_standby_location_pin"
+        app:layout_constraintBottom_toBottomOf="@id/huaweiMap"
+        app:layout_constraintEnd_toEndOf="@id/huaweiMap"
+        app:layout_constraintStart_toStartOf="@+id/huaweiMap"
+        app:layout_constraintTop_toTopOf="@id/huaweiMap" />
+</androidx.constraintlayout.widget.ConstraintLayout>

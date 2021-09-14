@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.destination.DestinationFragment">
+
+    <FrameLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/searchAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="4dp"
+            android:drawablePadding="8dp"
+            android:maxLines="2"
+            android:text="@string/where_would_like_to_go"
+            android:fontFamily="@font/muli_regular"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/ic_baseline_search_24" />
+    </FrameLayout>
+
+    <com.huawei.hms.maps.MapView
+        android:id="@+id/huaweiMap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout"
+        map:cameraTargetLat="41.009314"
+        map:cameraTargetLng="29.003253"
+        map:cameraZoom="10"
+        map:mapType="normal"
+        map:uiCompass="true"
+        map:uiZoomControls="true">
+
+    </com.huawei.hms.maps.MapView>
+
+    <Button
+        android:id="@+id/set_destination_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/huawei_red"
+        android:text="@string/set_destination"
+        android:textAllCaps="false"
+        android:fontFamily="@font/muli_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintGuide_percent="0.9"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/location_pin_imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_end_location_pin"
+        app:layout_constraintBottom_toBottomOf="@id/huaweiMap"
+        app:layout_constraintEnd_toEndOf="@id/huaweiMap"
+        app:layout_constraintStart_toStartOf="@+id/huaweiMap"
+        app:layout_constraintTop_toTopOf="@id/huaweiMap" />
+
+    <ImageView
+        android:id="@+id/myLocationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/image_button_bg"
+        android:padding="@dimen/image_button_padding"
+        android:src="@drawable/ic_baseline_my_location_24"
+        app:layout_constraintBottom_toTopOf="@+id/set_destination_button"
+        map:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
